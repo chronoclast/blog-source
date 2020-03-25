@@ -4,7 +4,9 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
+    siteTitle: `nihil obstat`,
     siteTitleAlt: `chronoclast | nihil obstat`,
+    siteLanguage: `es`
   },
   plugins: [
     {
@@ -12,12 +14,12 @@ module.exports = {
       options: {
         navigation: [
           {
-            title: `Blog`,
+            title: `Artículos`,
             slug: `/blog`,
           },
           {
-            title: `About`,
-            slug: `/about`,
+            title: `Sobre mí`,
+            slug: `/sobre-mi`,
           },
         ],
         externalLinks: [
