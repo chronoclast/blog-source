@@ -6,7 +6,8 @@ module.exports = {
   siteMetadata: {
     siteTitle: `nihil obstat`,
     siteTitleAlt: `chronoclast | nihil obstat`,
-    siteLanguage: `es`
+    siteLanguage: `es`,
+    siteUrl: `https://chronoclast.github.io`,
   },
   plugins: [
     {
