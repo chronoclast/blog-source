@@ -29,6 +29,10 @@ Alternatively, it may be here:
 ### Edit the homepage (incl. the link to the latest posts)
 
     /node_modules/@lekoarts/gatsby-theme-minimal-blog/src/components/homepage.tsx
+    
+### Replacing the default configuration with my own tweaks
+
+All files listed in this repository under the `custom-add-ons` folder must overwrite the default files under the directory `/node_modules/@lekoarts/gatsby-theme-minimal-blog/src` of the blog to be deployed, keeping the exact same folder structure.
 
 ## Miscellanea
 
@@ -45,3 +49,10 @@ Alternatively, it may be here:
 { fontWeight: '800' }, // Heavy
 { fontWeight: '900' }, // Black
 ```
+
+## Fixing Gatsby fuckups
+
+    rm -rf node_modules/
+    rm package-lock.json
+    npm install
+    
