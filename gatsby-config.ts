@@ -1,14 +1,18 @@
-require(`dotenv`).config({
-  path: `.env`,
-})
+import type { GatsbyConfig } from "gatsby"
+import "dotenv/config"
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     siteTitle: `nihil obstat`,
     siteTitleAlt: `chronoclast | nihil obstat`,
-    siteLanguage: `es`,
+    siteHeadline: `chronoclast | nihil obstat`,
     siteUrl: `https://chronoclast.github.io`,
+    siteDescription: `Sea imprimido.`,
+    siteImage: `/banner.jpg`,
+    siteLanguage: `es`,
+    author: `chronoclast`,
   },
+  trailingSlash: `always`,
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
@@ -35,13 +39,12 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: process.env.GOOGLE_ANALYTICS_ID,
-    //   },
-    // },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -68,6 +71,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
-    // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
 }
+
+export default config
