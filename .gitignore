@@ -1,126 +1,25 @@
-# Compiled source and executables #
-###################################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Dependencies
+/node_modules/
 
-# Packages #
-############
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
+# Gatsby generated output and cache
+/.cache/
+/public/
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-*.iml
+# Local environment variables
+.env
+.env.*
+!.env.example
 
-# OS generated files #
-######################
+# npm and Yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS and Windows files
 .DS_Store
-.DS_Store?
 ._*
-.Spotlight-V100
-.Trashes
-*.icloud
-ehthumbs.db
+.Spotlight-V100/
+.Trashes/
 Thumbs.db
-
-# npm modules #
-###############
-node_modules/*
-
-# Python-related files #
-########################
-*.pyc
-.tox
-**.egg-info
-**Version.py
-__pycache__/
-venv/
-
-# Prerequisites #
-#################
-*.d
-
-# Object files #
-################
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output #
-#################
-*.ilk
-*.map
-*.exp
-
-# Libraries #
-#############
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs) #
-######################################
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Debug files #
-###############
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Precompiled Headers #
-#######################
-*.gch
-*.pch
-
-# Kernel module compile results #
-#################################
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# Miscellaneous #
-#################
-.Rhistory
-*.history
-Debug/
-.settings/
-.cproject
-.project
-build/
-models/
-.cache/
-config.yaml
-.token
-.token_prod
-.token_stg
-
-
+ehthumbs.db
+Desktop.ini
