@@ -11,7 +11,7 @@ Most (if not all) articles are written in _the tongue of Cervantes_ (spanish). P
 some inspiration there. Otherwise, at least it shows how the end result may look like, in case you
 decide to build your own.
 
-## Remote setup
+## Clone the repository
 
 First of all, clone the repository and head to its directory:
 
@@ -20,31 +20,17 @@ git clone https://github.com/chronoclast/blog-source
 cd blog-source
 ```
 
-Check the current remotes:
-
-```sh
-git remote -v
-```
-
-Add the GitHub Pages remote:
-
-```sh
-git remote add origin https://github.com/chronoclast/chronoclast.github.io
-```
-
-> ℹ️ If the SSH access has been configured, the remote can also be added this way.
+> ℹ️ If the SSH access has been configured, it can also be cloned as follows:
+>
+> ```sh
+> git clone git@github.com:chronoclast/blog-source.git
+> ```
 
 ## Use the correct Node version
 
 ```sh
 nvm install 20
 nvm use 20
-```
-
-## Install GitHub Pages support
-
-```sh
-npm install gh-pages --save-dev
 ```
 
 ## Install dependencies
@@ -67,6 +53,28 @@ Clean the Gatsby cache/build state:
 npm run clean
 ```
 
+## Customize the Gatsby theme
+
+The site uses Gatsby theme shadowing to customize `@lekoarts/gatsby-theme-minimal-blog`. Add an
+override under `src/@lekoarts/gatsby-theme-minimal-blog/`, mirroring the path relative to the
+theme's `src` directory. For example:
+
+```text
+node_modules/@lekoarts/gatsby-theme-minimal-blog/src/components/footer.tsx
+src/@lekoarts/gatsby-theme-minimal-blog/components/footer.tsx
+```
+
+The file under `src/` takes precedence over the theme version. Avoid editing files in
+`node_modules`, since dependency installs can replace them. Existing overrides in this repository
+include the homepage, blog page, article template, footer, and homepage text.
+
+When shadowing a component, use package-qualified imports for other theme files (for example,
+`@lekoarts/gatsby-theme-minimal-blog/src/components/layout`), since relative imports would resolve
+from the override's location.
+
+Restart `npm run develop` after adding a new override. If Gatsby still serves the old version, stop
+the server, run `npm run clean`, and start it again.
+
 ## Build and deploy
 
 Build the project and publish it to GitHub Pages:
@@ -75,11 +83,11 @@ Build the project and publish it to GitHub Pages:
 npm run deploy
 ```
 
-## Useful leanup commands
+## Useful cleanup commands
 
 ```sh
 rm -rf node_modules/.cache/gh-pages
-rm -rf node_modules package-lock.json .cache public
+rm -rf node_modules .cache public
 ```
 
 ## Create a brand new Gatsby site
